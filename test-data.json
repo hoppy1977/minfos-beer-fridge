@@ -1,0 +1,115 @@
+{
+    "resource": "/temperature",
+    "path": "/temperature",
+    "httpMethod": "POST",
+    "headers": {
+        "Accept": "*/*",
+        "CloudFront-Forwarded-Proto": "https",
+        "CloudFront-Is-Desktop-Viewer": "true",
+        "CloudFront-Is-Mobile-Viewer": "false",
+        "CloudFront-Is-SmartTV-Viewer": "false",
+        "CloudFront-Is-Tablet-Viewer": "false",
+        "CloudFront-Viewer-Country": "AU",
+        "Content-Type": "application/json",
+        "Host": "xyxa9i2g7i.execute-api.ap-southeast-2.amazonaws.com",
+        "User-Agent": "arduino-yun",
+        "Via": "1.1 370d746a5e665df83579975d079783ed.cloudfront.net (CloudFront)",
+        "X-Amz-Cf-Id": "3tY0cynL4QQRuSCt5Ztv746_QDdOVG2oSTYOZ5BqYwdM4gjEi5IHzw==",
+        "X-Amzn-Trace-Id": "Root=1-5e1462e7-c0b155e344f9d67371e2980c",
+        "x-api-key": "zCHviXD15Z28vfdc3T06o25Rh16XrUSb9JE6bnYi",
+        "X-Forwarded-For": "194.193.160.169, 54.239.202.90",
+        "X-Forwarded-Port": "443",
+        "X-Forwarded-Proto": "https"
+    },
+    "multiValueHeaders": {
+        "Accept": [
+            "*/*"
+        ],
+        "CloudFront-Forwarded-Proto": [
+            "https"
+        ],
+        "CloudFront-Is-Desktop-Viewer": [
+            "true"
+        ],
+        "CloudFront-Is-Mobile-Viewer": [
+            "false"
+        ],
+        "CloudFront-Is-SmartTV-Viewer": [
+            "false"
+        ],
+        "CloudFront-Is-Tablet-Viewer": [
+            "false"
+        ],
+        "CloudFront-Viewer-Country": [
+            "AU"
+        ],
+        "Content-Type": [
+            "application/json"
+        ],
+        "Host": [
+            "xyxa9i2g7i.execute-api.ap-southeast-2.amazonaws.com"
+        ],
+        "User-Agent": [
+            "arduino-yun"
+        ],
+        "Via": [
+            "1.1 370d746a5e665df83579975d079783ed.cloudfront.net (CloudFront)"
+        ],
+        "X-Amz-Cf-Id": [
+            "3tY0cynL4QQRuSCt5Ztv746_QDdOVG2oSTYOZ5BqYwdM4gjEi5IHzw=="
+        ],
+        "X-Amzn-Trace-Id": [
+            "Root=1-5e1462e7-c0b155e344f9d67371e2980c"
+        ],
+        "x-api-key": [
+            "zCHviXD15Z28vfdc3T06o25Rh16XrUSb9JE6bnYi"
+        ],
+        "X-Forwarded-For": [
+            "194.193.160.169, 54.239.202.90"
+        ],
+        "X-Forwarded-Port": [
+            "443"
+        ],
+        "X-Forwarded-Proto": [
+            "https"
+        ]
+    },
+    "queryStringParameters": null,
+    "multiValueQueryStringParameters": null,
+    "pathParameters": null,
+    "stageVariables": null,
+    "requestContext": {
+        "resourceId": "m5356d",
+        "resourcePath": "/temperature",
+        "httpMethod": "POST",
+        "extendedRequestId": "F7RkIHe5ywMFdfg=",
+        "requestTime": "07/Jan/2020:10:52:23 +0000",
+        "path": "/dev/temperature",
+        "accountId": "244360212732",
+        "protocol": "HTTP/1.1",
+        "stage": "dev",
+        "domainPrefix": "xyxa9i2g7i",
+        "requestTimeEpoch": 1578394343189,
+        "requestId": "9c787406-961f-4586-8676-23be93691fe4",
+        "identity": {
+            "cognitoIdentityPoolId": null,
+            "cognitoIdentityId": null,
+            "apiKey": "zCHviXD15Z28vfdc3T06o25Rh16XrUSb9JE6bnYi",
+            "principalOrgId": null,
+            "cognitoAuthenticationType": null,
+            "userArn": null,
+            "apiKeyId": "tjkjx0t8l9",
+            "userAgent": "arduino-yun",
+            "accountId": null,
+            "caller": null,
+            "sourceIp": "194.193.160.169",
+            "accessKey": null,
+            "cognitoAuthenticationProvider": null,
+            "user": null
+        },
+        "domainName": "xyxa9i2g7i.execute-api.ap-southeast-2.amazonaws.com",
+        "apiId": "xyxa9i2g7i"
+    },
+    "body": "{\"roomTemperature\":\"22.88\"}",
+    "isBase64Encoded": false
+}
