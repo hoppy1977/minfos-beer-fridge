@@ -1,5 +1,8 @@
 'use strict';
 
+var AWS = require('aws-sdk');
+AWS.config.update({region: 'ap-southeast-2'});
+
 module.exports.submitTemperatures = async event => {
   
   //console.log(JSON.stringify(event));
@@ -15,6 +18,29 @@ module.exports.submitTemperatures = async event => {
   console.log(fridgeTemperature);
 
   console.log("yyy");
+
+  var ddb = new AWS.DynamoDB({apiVersion: '2012-08-10'});
+  var params = {
+    TableName: 'MBF',
+    Item: {
+      'Date' : {S: '2020-01-11'},
+      'TimeStamp' : {S: '001'},
+      'BeerTemperature' : {S: 'Richard Roe'},
+      'RoomTemperature' : {S: 'Richard Roe'},
+      'FridgeTemperature' : {S: 'Richard Roe'}
+    }
+  };
+
+  await ddb.putItem(params, function (err, data) {
+    if (err) {
+      console.log("Error", err);
+    }
+    else {
+      console.log("Success", data);
+    }
+  }).promise();
+
+  console.log("zzz");
 
   return {
     statusCode: 200,
