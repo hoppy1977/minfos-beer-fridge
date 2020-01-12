@@ -31,11 +31,11 @@ custom:
     definitions:
       minimumSubmissionsNotReceived:
         metric: submissionsReceived
-        threshold: 100 # We expect at least 100 submissions in every datapoint
+        threshold: 20 # We expect at least 20 submissions in every datapoint
         statistic: Sum
-        period: 600 # One datapoint every 10 minutes
-        evaluationPeriods: 1 # Evaluate 1 datapoints
-        datapointsToAlarm: 1 # If we have not met or exceeded the threshold in that datapoint then go to alarm
+        period: 60 # One datapoint every 1 minute
+        evaluationPeriods: 10 # Evaluate 10 datapoints
+        datapointsToAlarm: 5 # If we have not met or exceeded the threshold in 5 of those datapoints then go to alarm
         comparisonOperator: LessThanThreshold
         pattern: 'Temperatures were submitted successfully'
     topics:
