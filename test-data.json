@@ -110,6 +110,6 @@
         "domainName": "xyxa9i2g7i.execute-api.ap-southeast-2.amazonaws.com",
         "apiId": "xyxa9i2g7i"
     },
-    "body": "{\"roomTemperature\":\"22.88\"}",
+    "body": "{\"beerTemperature\":\"2.56\", \"roomTemperature\":\"22.88\"}",
     "isBase64Encoded": false
 }
