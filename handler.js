@@ -43,14 +43,14 @@ module.exports.submitTemperatures = async event => {
     params.Item.FridgeTemperature = {S: fridgeTemperature};
   }
 
-  await ddb.putItem(params, function (err, data) {
-    if (err) {
-      console.log("Error", err);
-    }
-    else {
+  await ddb.putItem(params)
+    .promise()
+    .then(function(data) {
       console.log("Success", data);
-    }
-  }).promise();
+    })
+    .catch(function(err) {
+      console.log("Error", err);
+    });
 
   console.log("zzz");
 
