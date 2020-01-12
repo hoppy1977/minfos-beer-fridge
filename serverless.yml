@@ -23,6 +23,37 @@ functions:
           path: temperature
           method: post
           private: true
+    alarms:
+      - minimumSubmissionsNotReceived
+
+custom:
+  alerts:
+    definitions:
+      minimumSubmissionsNotReceived:
+        metric: submissionsReceived
+        threshold: 100 # We expect at least 100 submissions in every datapoint
+        statistic: Sum
+        period: 600 # One datapoint every 10 minutes
+        evaluationPeriods: 1 # Evaluate 1 datapoints
+        datapointsToAlarm: 1 # If we have not met or exceeded the threshold in that datapoint then go to alarm
+        comparisonOperator: LessThanThreshold
+        pattern: 'Temperatures were submitted successfully'
+    topics:
+      ok:
+        topic: ${self:service}-${self:provider.stage}-alerts-ok
+        notifications:
+          - protocol: sms
+            endpoint: ${ssm:/MinfosBeerFridge/PhoneNumber}
+      alarm:
+        topic: ${self:service}-${self:provider.stage}-alerts-alarm
+        notifications:
+          - protocol: sms
+            endpoint: ${ssm:/MinfosBeerFridge/PhoneNumber}
+      insufficientData:
+        topic: ${self:service}-${self:provider.stage}-alerts-insufficientData
+        notifications:
+          - protocol: sms
+            endpoint: ${ssm:/MinfosBeerFridge/PhoneNumber}
 
 resources:
   Resources:
@@ -43,3 +74,6 @@ resources:
         ProvisionedThroughput:
           ReadCapacityUnits: 1
           WriteCapacityUnits: 1
+
+plugins:
+  - serverless-plugin-aws-alerts

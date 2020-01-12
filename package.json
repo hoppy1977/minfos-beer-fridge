@@ -18,7 +18,8 @@
   },
   "homepage": "https://github.com/hoppy1977/minfos-beer-fridge#readme",
   "devDependencies": {
-    "serverless": "^1.58.0"
+    "serverless": "^1.58.0",
+    "serverless-plugin-aws-alerts": "^1.4.0"
   },
   "dependencies": {
     "aws-sdk": "^2.600.0"

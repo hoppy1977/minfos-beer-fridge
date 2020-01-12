@@ -44,7 +44,7 @@ module.exports.submitTemperatures = async event => {
   await ddb.putItem(params)
     .promise()
     .then(function(data) {
-      console.log("Success", data);
+      console.log("Success! Temperatures were submitted successfully!", data);
     
       return {
         statusCode: 200,
@@ -59,7 +59,7 @@ module.exports.submitTemperatures = async event => {
       };
     })
     .catch(function(err) {
-      console.log("Error", err);
+      console.log("Error! A problem occured when submitting temperatures.", err);
 
       return {
         statusCode: 500,
