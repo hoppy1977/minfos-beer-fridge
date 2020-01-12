@@ -20,6 +20,7 @@ module.exports.submitTemperatures = async event => {
   console.log("yyy");
 
   var currentTimeStamp = new Date();
+//  var currentTimeStamp = new Date().toLocaleString("en-AU", {timeZone: "Australia/Melbourne"})
   var date
     = currentTimeStamp.getFullYear() + '-'
     + currentTimeStamp.getMonth() + 1 + '-'
