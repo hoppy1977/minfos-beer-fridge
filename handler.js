@@ -26,15 +26,21 @@ module.exports.submitTemperatures = async event => {
     + currentTimeStamp.getDate();
   var ddb = new AWS.DynamoDB({apiVersion: '2012-08-10'});
   var params = {
-    TableName: 'MBF4',
+    TableName: 'MBF5',
     Item: {
       'Date' : {S: date},
       'TimeStamp' : {S: currentTimeStamp.toISOString()},
-      'BeerTemperature' : {S: ' '}, // TODO:
-      'RoomTemperature' : {S: roomTemperature},
-      'FridgeTemperature' : {S: ' '} // TODO:
     }
   };
+  if(beerTemperature) {
+    params.Item.BeerTemperature = {S: beerTemperature};
+  }
+  if(roomTemperature) {
+    params.Item.RoomTemperature = {S: roomTemperature};
+  }
+  if(fridgeTemperature) {
+    params.Item.FridgeTemperature = {S: fridgeTemperature};
+  }
 
   await ddb.putItem(params, function (err, data) {
     if (err) {

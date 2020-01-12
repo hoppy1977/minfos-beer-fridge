@@ -29,7 +29,7 @@ resources:
     usersTable: 
       Type: AWS::DynamoDB::Table
       Properties:
-        TableName: MBF4
+        TableName: MBF5
         AttributeDefinitions:
           - AttributeName: Date
             AttributeType: S
