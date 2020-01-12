@@ -29,7 +29,7 @@ resources:
     usersTable: 
       Type: AWS::DynamoDB::Table
       Properties:
-        TableName: MBF5
+        TableName: MBF
         AttributeDefinitions:
           - AttributeName: Date
             AttributeType: S
@@ -41,5 +41,5 @@ resources:
           - AttributeName: TimeStamp
             KeyType: RANGE
         ProvisionedThroughput:
-          ReadCapacityUnits: 5
-          WriteCapacityUnits: 5
+          ReadCapacityUnits: 1
+          WriteCapacityUnits: 1

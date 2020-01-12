@@ -6,14 +6,13 @@ AWS.config.update({region: 'ap-southeast-2'});
 module.exports.submitTemperatures = async event => {
   
   var currentTimeStamp = new Date();
-//  var currentTimeStamp = new Date().toLocaleString("en-AU", {timeZone: "Australia/Melbourne"})
   var date
-    = currentTimeStamp.getFullYear() + '-'
-    + currentTimeStamp.getMonth() + 1 + '-'
-    + currentTimeStamp.getDate();
+    = currentTimeStamp.getUTCFullYear() + '-'
+    + currentTimeStamp.getUTCMonth() + 1 + '-'
+    + currentTimeStamp.getUTCDate();
   var ddb = new AWS.DynamoDB({apiVersion: '2012-08-10'});
   var params = {
-    TableName: 'MBF5',
+    TableName: 'MBF',
     Item: {
       'Date' : {S: date},
       'TimeStamp' : {S: currentTimeStamp.toISOString()},
