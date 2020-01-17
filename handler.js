@@ -41,7 +41,7 @@ module.exports.submitTemperatures = async event => {
   }
 
   // Write the data to the database
-  await ddb.putItem(params)
+  return await ddb.putItem(params)
     .promise()
     .then(function(data) {
       console.log("Success! Temperatures were submitted successfully!", data);
