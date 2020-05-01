@@ -8,8 +8,8 @@ module.exports.submitTemperatures = async event => {
   var currentTimeStamp = new Date();
   var date
     = currentTimeStamp.getUTCFullYear() + '-'
-    + currentTimeStamp.getUTCMonth() + 1 + '-'
-    + currentTimeStamp.getUTCDate();
+    + (currentTimeStamp.getUTCMonth() + 1).toString().padStart(2, '0') + '-'
+    + currentTimeStamp.getUTCDate().toString().padStart(2, '0');
   var ddb = new AWS.DynamoDB({apiVersion: '2012-08-10'});
   var params = {
     TableName: 'MBF',
